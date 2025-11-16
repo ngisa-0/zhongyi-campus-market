@@ -1,6 +1,18 @@
 package org.example.campusmarket.Mapper;
 
 import org.apache.ibatis.annotations.Mapper;
+<<<<<<< HEAD
+import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Select;
+import org.example.campusmarket.entity.User;
+
+@Mapper
+public interface UserMapper {
+    // 根据ID查询用户（用于获取发送者用户名）
+    @Select("SELECT id, username FROM users WHERE id = #{id}")
+    User findById(@Param("id") Integer id);
+}
+=======
 import org.apache.ibatis.annotations.*;
 
 import org.example.campusmarket.entity.Product;
@@ -71,3 +83,4 @@ public interface UserMapper {
     """)
     List<Product> findFavoriteProducts(@Param("userId") Integer userId);
 }
+>>>>>>> ebe4f8a2a33c8b6f64f66e6ae44304a33717d1ed
